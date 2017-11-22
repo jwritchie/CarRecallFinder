@@ -5,7 +5,6 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.Http;
 using System.Web.Http.ModelBinding;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -16,10 +15,11 @@ using Microsoft.Owin.Security.OAuth;
 using CarRecallFinder.Models;
 using CarRecallFinder.Providers;
 using CarRecallFinder.Results;
+using System.Web.Http;
 
 namespace CarRecallFinder.Controllers
 {
-    [Authorize]
+    [System.Web.Mvc.RequireHttps]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {

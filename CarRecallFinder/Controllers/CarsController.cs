@@ -14,6 +14,7 @@ namespace CarRecallFinder.Controllers
     /// <summary>
     /// Get Car information
     /// </summary>
+    [System.Web.Mvc.RequireHttps]
     [RoutePrefix("api/cars")]
     public class CarsController : ApiController
     {

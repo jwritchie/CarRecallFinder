@@ -4,10 +4,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Mvc;
 
 namespace CarRecallFinder.Controllers
 {
-    [Authorize]
+    [RequireHttps]
     public class ValuesController : ApiController
     {
         // GET api/values
