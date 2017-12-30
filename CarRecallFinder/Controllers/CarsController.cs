@@ -20,12 +20,12 @@ namespace CarRecallFinder.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        /** New DbContext we create after database-first.
-            NOTE: this doesn't work now that CarFinderDb.edmx has been excluded from the project. **/
+        //* New DbContext we create after database-first.
+        //    NOTE: this doesn't work now that CarFinderDb.edmx has been excluded from the project. *
         //private Entities db2 = new Entities();
 
         /// <summary>
-        /// Get all years
+        /// Get all Years for which data is available.
         /// </summary>
         [Route("Year")]
         public async Task<List<string>> GetYears()
@@ -35,7 +35,7 @@ namespace CarRecallFinder.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Get all Makes for a given Year.
         /// </summary>
         /// <param name="year"></param>
         /// <returns></returns>
@@ -46,7 +46,7 @@ namespace CarRecallFinder.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Get all Models for a given Year and Make.
         /// </summary>
         /// <param name="year"></param>
         /// <param name="make"></param>
@@ -58,7 +58,7 @@ namespace CarRecallFinder.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Get all Trims for a given Year, Make, and Model.
         /// </summary>
         /// <param name="year"></param>
         /// <param name="make"></param>
@@ -71,7 +71,7 @@ namespace CarRecallFinder.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Get a specific Car, using a given Year, Make, Model, and Trim.
         /// </summary>
         /// <param name="year"></param>
         /// <param name="make"></param>
@@ -85,7 +85,7 @@ namespace CarRecallFinder.Controllers
         }
 
         /// <summary>
-        /// Get recall data for the year, make, & model.
+        /// Get NHTSA Recall data for a given car with the specified Year, Make, Model, and Trim.
         /// </summary>
         /// <param name="year"></param>
         /// <param name="make"></param>
@@ -114,10 +114,10 @@ namespace CarRecallFinder.Controllers
                     var result = JsonConvert.DeserializeObject<Recalls>(json);
                     car.RecallResults = result.Results;
 
-                    /** Builds URL with data:
-                        https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/2008/make/pontiac/model/g6?format=json
-                        which is sent, and await resulting data back in json format. 
-                    **/
+                    //*Builds URL with data:
+                    //https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/2008/make/pontiac/model/g6?format=json
+                    //which is sent, and await resulting data back in json format. 
+                    //*
                 }
                 catch (Exception e)
                 {
@@ -129,7 +129,7 @@ namespace CarRecallFinder.Controllers
         }
 
         /// <summary>
-        /// Get car images for the year, make, model, trim.
+        /// Get car images for the specified Year, Make, Model, and Trim.
         /// </summary>
         /// <param name="year"></param>
         /// <param name="make"></param>
@@ -137,7 +137,7 @@ namespace CarRecallFinder.Controllers
         /// <param name="trim"></param>
         /// <returns></returns>
         [Route("CarImage")]
-        public async Task<IHttpActionResult> getCarImage(string year, string make, string model, string trim)
+        public async Task<IHttpActionResult> GetCarImage(string year, string make, string model, string trim)
         {
             var car = new carViewModel();
 

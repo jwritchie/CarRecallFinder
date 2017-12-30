@@ -488,19 +488,19 @@
         </member>
         <member name="M:CarRecallFinder.Controllers.CarsController.GetYears">
             <summary>
-            Get all years
+            Get all Years for which data is available.
             </summary>
         </member>
         <member name="M:CarRecallFinder.Controllers.CarsController.GetMakes(System.String)">
             <summary>
-            
+            Get all Makes for a given Year.
             </summary>
             <param name="year"></param>
             <returns></returns>
         </member>
         <member name="M:CarRecallFinder.Controllers.CarsController.GetModels(System.String,System.String)">
             <summary>
-            
+            Get all Models for a given Year and Make.
             </summary>
             <param name="year"></param>
             <param name="make"></param>
@@ -508,7 +508,7 @@
         </member>
         <member name="M:CarRecallFinder.Controllers.CarsController.GetTrims(System.String,System.String,System.String)">
             <summary>
-            
+            Get all Trims for a given Year, Make, and Model.
             </summary>
             <param name="year"></param>
             <param name="make"></param>
@@ -517,7 +517,7 @@
         </member>
         <member name="M:CarRecallFinder.Controllers.CarsController.GetCar(System.String,System.String,System.String,System.String)">
             <summary>
-            
+            Get a specific Car, using a given Year, Make, Model, and Trim.
             </summary>
             <param name="year"></param>
             <param name="make"></param>
@@ -525,10 +525,19 @@
             <param name="trim"></param>
             <returns></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:CarRecallFinder.Controllers.CarsController.GetCarData(System.String,System.String,System.String,System.String)" -->
-        <member name="M:CarRecallFinder.Controllers.CarsController.getCarImage(System.String,System.String,System.String,System.String)">
+        <member name="M:CarRecallFinder.Controllers.CarsController.GetCarData(System.String,System.String,System.String,System.String)">
             <summary>
-            Get car images for the year, make, model, trim.
+            Get NHTSA Recall data for a given car with the specified Year, Make, Model, and Trim.
+            </summary>
+            <param name="year"></param>
+            <param name="make"></param>
+            <param name="model"></param>
+            <param name="trim"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CarRecallFinder.Controllers.CarsController.GetCarImage(System.String,System.String,System.String,System.String)">
+            <summary>
+            Get car images for the specified Year, Make, Model, and Trim.
             </summary>
             <param name="year"></param>
             <param name="make"></param>
